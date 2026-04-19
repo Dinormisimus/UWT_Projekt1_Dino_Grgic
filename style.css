@@ -58,7 +58,7 @@ nav {
     font-size: 14px;
     transition: 0.3s;
 }
-.nav-menu li a:hover, .nav-menu li a.active { color: var(--primary); }
+.nav-menu li a:hover, .nav-menu li a.active { color: var(--primary); text-decoration: underline; }
 
 /* --- 4. HAMBURGER (Samo CSS) --- */
 .hamburger {

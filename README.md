@@ -6,22 +6,21 @@ Moderni, responzivni website za brijačnicu/frizerski salon smješten u Zadru. P
 Ovaj projekt prikazuje vještine rada s HTML5, CSS3 (Flexbox, Grid) i osnovnim principima web dizajna bez korištenja teških vanjskih frameworka.
 
 ## ✨ Ključne značajke
-- **Responzivni dizajn:** Stranica je u potpunosti prilagođena mobilnim uređajima, tabletima i stolnim računalima.
-- **Prozirna navigacija:** `Absolute` pozicionirana navigacija koja se stapa s Hero sekcijom na početnoj stranici.
-- **Checkbox Hack Hamburger Menu:** Mobilni izbornik izrađen isključivo pomoću CSS-a (bez JavaScripta).
-- **Interaktivna Galerija:** Prikaz radova pomoću CSS Grida za optimalan raspored slika.
-- **Google Maps Integracija:** Custom ugrađena karta sa sjenčanjem (CSS filteri) kako bi se uklopila u tamnu temu stranice.
-- **Kontakt Forma:** Stilski usklađena forma za slanje upita.
-- **Favicon:** Dodan favicon na svim stranicama projekta.
+- **Responzivni dizajn:** Stranica je prilagođena mobilnim uređajima, tabletima i stolnim računalima.
+- **Sticky navigacija:** Navigacija ostaje pri vrhu dok se skrola sadržaj i koristi tamni overlay.
+- **Hamburger izbornik bez JavaScripta:** Mobilni meni je izrađen isključivo pomoću CSS checkbox hacka.
+- **Galerija:** Prikaz radova izrađen s CSS Grid layoutom.
+- **Google Maps integracija:** Ugrađena karta koja prati tamni dizajn.
+- **Kontakt forma:** Jednostavna forma s labelama i pristupačnim unosom.
+- **Favicon:** Dodan favicon u korijenu projekta i spojen relativnom putanjom.
 
 ## 🛠️ Korištene tehnologije
 - **HTML5** - Semantička struktura stranice.
-- **CSS3** - Napredno stiliziranje, Flexbox, Grid, CSS varijable i filteri.
-- **Google Fonts** - Korišteni fontovi `Poppins` i `Playfair Display` za postizanje premium izgleda.
-- **FontAwesome / Custom SVG** - Za ikone i vizualne elemente.
+- **CSS3** - Napredno stiliziranje, Flexbox, Grid, CSS varijable i responsive dizajn.
+- **Google Fonts** - Fontovi `Poppins` i `Playfair Display` za premium izgled.
 
 ## Komentar
-- Iz nekog razloga Favicon radi na VS-codeu, a ne radi na GitHub Pages-u.
+- Favicon je spreman u root mapi i koristi relativnu putanju. Ako se ne prikazuje na GitHub Pagesu, obriši cache ili osvježi stranicu nekoliko puta.
 
 ## 📂 Struktura projekta
 ```text
@@ -32,5 +31,5 @@ Ovaj projekt prikazuje vještine rada s HTML5, CSS3 (Flexbox, Grid) i osnovnim p
 ├── galerija.html    # Prikaz radova (Grid layout)
 ├── lokacija.html    # Google Maps i kontakt forma
 ├── style.css        # Svi stilovi, varijable i media upiti
-└── assets/          # Slike, logotip i favicons
+└── favicon.png      # Ikona stranice
 ```
