@@ -1,7 +1,11 @@
 [
   { "id": 1, "naziv": "Klasično šišanje", "cijena": 15.00, "kategorija": "kosa" },
-  { "id": 2, "naziv": "Uređivanje brade", "cijena": 10.00, "kategorija": "brada" },
+  { "id": 2, "naziv": "Uređivanje brade (Trimer & Britva)", "cijena": 10.00, "kategorija": "brada" },
   { "id": 3, "naziv": "Komplet (Šišanje + Brada)", "cijena": 22.00, "kategorija": "komplet" },
-  { "id": 4, "naziv": "Bojanje kose", "cijena": 18.00, "kategorija": "kosa" },
-  { "id": 5, "naziv": "Premium brijanje opasnošću", "cijena": 15.00, "kategorija": "brada" }
+  { "id": 4, "naziv": "Kamuflaža sijedih (Kosa ili Brada)", "cijena": 12.00, "kategorija": "color" },
+  { "id": 5, "naziv": "Premium Hot Towel brijanje", "cijena": 15.00, "kategorija": "brada" },
+  { "id": 6, "naziv": "Black Mask tretman lica", "cijena": 8.00, "kategorija": "care" },
+  { "id": 7, "naziv": "Masaža vlasišta + hranjivi tonik", "cijena": 7.00, "kategorija": "care" },
+  { "id": 8, "naziv": "Junior šišanje (do 12 godina)", "cijena": 10.00, "kategorija": "kids" },
+  { "id": 9, "naziv": "Full Barber Iskustvo (Šišanje, Brada, Maska, Ručnik)", "cijena": 30.00, "kategorija": "komplet" }
 ]
