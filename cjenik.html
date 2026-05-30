@@ -42,11 +42,25 @@
             </select>
         </div>
 
-        <div id="loading-state" class="ui-state">Učitavam usluge...</div>
-        <div id="error-state" class="ui-state hidden">Došlo je do pogreške pri učitavanju podataka.</div>
-        <div id="empty-state" class="ui-state hidden">Nema pronađenih usluga za vašu pretragu.</div>
+        <div class="pricing-layout">
+            <div class="pricing-left-side">
+                <div id="loading-state" class="ui-state">Učitavam usluge...</div>
+                <div id="error-state" class="ui-state hidden">Došlo je do pogreške pri učitavanju podataka.</div>
+                <div id="empty-state" class="ui-state hidden">Nema pronađenih usluga za vašu pretragu.</div>
+                <div id="pricing-list" class="pricing-list"></div>
+            </div>
 
-        <div id="pricing-list" class="pricing-list"></div>
+            <div class="cart-wrapper">
+                <h3>Kalkulator Troška</h3>
+                <div id="cart-items" class="cart-items">
+                    </div>
+                <div class="cart-total">
+                    <span>Ukupno:</span>
+                    <span id="cart-total-price">0.00 €</span>
+                </div>
+                <button id="clear-cart-btn" class="btn-clear-cart">Isprazni kalkulator</button>
+            </div>
+        </div>
     </main>
 
     <footer>

@@ -1,17 +1,17 @@
-import { state, spremiPretragu, postaviKategoriju } from './state.js';
-import { renderUsluge, prikaziError } from './ui.js';
+import { state, spremiPretragu, postaviKategoriju, isprazniKosaricu } from './state.js';
+import { renderUsluge, renderKosarica, prikaziError } from './ui.js';
 
 const listContainer = document.getElementById('pricing-list');
 const searchInput = document.getElementById('search-input');
 const filterSelect = document.getElementById('filter-select');
+const clearCartBtn = document.getElementById('clear-cart-btn');
 
-// Vraćanje zadnje pretrage iz localStorage u input polje
-if(searchInput) searchInput.value = state.searchQuery;
+if (searchInput) {
+    searchInput.value = state.searchQuery;
+}
 
-// ASYNC: Učitavanje podataka preko Fetch API-ja
 async function ucitajUsluge() {
     try {
-        // Može biti lokalni JSON ili URL nekog javnog API-ja
         const response = await fetch('./usluge.json');
         if (!response.ok) throw new Error('Mrežna pogreška');
         
@@ -23,24 +23,32 @@ async function ucitajUsluge() {
     }
 }
 
+// GLAVNA FUNKCIJA KOJA RE-RENDERA SVE NA STRANICI
 function osvjeziUI() {
     renderUsluge(listContainer, osvjeziUI);
+    renderKosarica(osvjeziUI);
 }
 
-// Eventovi za unos i promjenu filtera
-if(searchInput) {
+if (searchInput) {
     searchInput.addEventListener('input', (e) => {
         spremiPretragu(e.target.value);
         osvjeziUI();
     });
 }
 
-if(filterSelect) {
+if (filterSelect) {
     filterSelect.addEventListener('change', (e) => {
-        postaviKategoriju(e.target.value);
+        const odabranaKat = e.target.value;
+        postaviKategoriju(odabranaKat);
         osvjeziUI();
     });
 }
 
-// Pokretanje aplikacije
+if (clearCartBtn) {
+    clearCartBtn.addEventListener('click', () => {
+        isprazniKosaricu();
+        osvjeziUI();
+    });
+}
+
 ucitajUsluge();
