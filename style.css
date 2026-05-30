@@ -101,12 +101,141 @@ nav {
     .nav-toggle:checked ~ .hamburger span:nth-child(3) { transform: rotate(-45deg) translate(6px, -5px); }
 }
 
-/* --- 5. KOMPONENTE --- */
+/* --- 5. STRANICA: CJENIK --- */
+.pricing-container {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.pricing-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.pricing-list {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.pricing-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+}
+
+.pricing-item .price {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* --- 6. STRANICA: GALERIJA --- */
+.gallery-title {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 40px;
+    font-family: var(--font-heading);
+    margin-top: 40px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 8%;
+}
+
+.gallery-grid img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+/* --- 7. STRANICA: LOKACIJA & KONTAKT --- */
+.location-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 8% 0 8%;
+}
+
+.location-title {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 50px;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+}
+
+.location-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: center;
+}
+
+.location-info, .contact-form-wrapper {
+    flex: 1;
+    min-width: 300px;
+}
+
+.location-info h2, .contact-form-wrapper h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.location-info .address {
+    margin-bottom: 20px;
+}
+
+.map-wrapper {
+    height: 350px;
+    background: #222;
+    border: 1px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.btn-submit {
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+/* --- 8. GLOBALNE KOMPONENTE & HERO --- */
 .btn {
     display: inline-block;
     padding: 15px 35px;
-    background-color: #c5a059 !important; /* Zlatna pozadina */
-    color: #fff !important;               /* BIJELI TEKST - ovo ti je falilo */
+    background-color: #c5a059 !important;
+    color: #fff !important;
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
@@ -123,18 +252,17 @@ footer {
     text-align: center;
     padding: 40px;
     border-top: 1px solid #222;
-    margin-top: 50px;
+    margin-top: 60px;
     color: var(--gray);
 }
-/* Stil za Google kartu */
+
 iframe {
     width: 100%;
     height: 100%;
     border: none;
-    /* FILTERI: */
     filter: grayscale(80%) invert(80%) contrast(80%);
 }
-/* Hero sekcija - pozadina i visina */
+
 .hero {
     height: 90vh;
     display: flex;
@@ -147,17 +275,14 @@ iframe {
     background-position: center;
 }
 
-/* Naslov */
 .hero h1 {
-    font-family: 'Playfair Display', serif; /* Provjeri ime font varijable */
+    font-family: var(--font-heading);
     font-size: 4rem;
-    color: #c5a059; /* Zlatna boja */
+    color: #c5a059;
     margin-bottom: 10px;
 }
 
-/* Tekst ispod naslova */
 .hero p {
-    color: #ddd; /* Svijetlo siva da se vidi na crnom */
+    color: #ddd;
     margin-bottom: 30px;
 }
-
