@@ -1,0 +1,7 @@
+[
+  { "id": 1, "naziv": "Klasično šišanje", "cijena": 15.00, "kategorija": "kosa" },
+  { "id": 2, "naziv": "Uređivanje brade", "cijena": 10.00, "kategorija": "brada" },
+  { "id": 3, "naziv": "Komplet (Šišanje + Brada)", "cijena": 22.00, "kategorija": "komplet" },
+  { "id": 4, "naziv": "Bojanje kose", "cijena": 18.00, "kategorija": "kosa" },
+  { "id": 5, "naziv": "Premium brijanje opasnošću", "cijena": 15.00, "kategorija": "brada" }
+]

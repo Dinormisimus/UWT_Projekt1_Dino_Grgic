@@ -286,3 +286,82 @@ iframe {
     color: #ddd;
     margin-bottom: 30px;
 }
+
+/* --- 9. NOVI STILOVI ZA JS INTERAKTIVNOST --- */
+.search-filter-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.search-filter-controls input, .search-filter-controls select {
+    padding: 10px 15px;
+    background: #1a1a1a;
+    border: 1px solid var(--primary);
+    color: white;
+    font-family: var(--font-body);
+    border-radius: 4px;
+}
+
+.search-filter-controls input { width: 250px; }
+
+.ui-state {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--gray);
+    margin: 20px 0;
+}
+
+.hidden { display: none !important; }
+
+.fav-btn {
+    background: transparent;
+    border: 1px solid var(--gray);
+    color: var(--gray);
+    padding: 4px 8px;
+    font-size: 11px;
+    margin-left: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.2s;
+    border-radius: 3px;
+}
+
+.fav-btn.active, .fav-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* Stilovi za validaciju forme */
+.error-text {
+    color: #ff4d4d;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.input-error {
+    border-color: #ff4d4d !important;
+}
+
+.form-message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.form-message.success {
+    background-color: rgba(40, 167, 69, 0.2);
+    border: 1px solid #28a745;
+    color: #28a745;
+}
+
+.form-message.error {
+    background-color: rgba(220, 53, 69, 0.2);
+    border: 1px solid #dc3545;
+    color: #dc3545;
+}

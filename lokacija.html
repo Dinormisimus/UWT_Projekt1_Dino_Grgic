@@ -9,17 +9,14 @@
     <title>Lokacija | Barber Zadar</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="js/formaApp.js" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Preskoči na sadržaj</a>
     <nav>
         <a href="index.html" class="logo">BARBER<span>ZADAR</span></a>
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <label for="nav-toggle" class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
+        <label for="nav-toggle" class="hamburger"><span></span><span></span><span></span></label>
         <ul class="nav-menu">
             <li><a href="index.html">Početna</a></li>
             <li><a href="cjenik.html">Cjenik</a></li>
@@ -48,18 +45,24 @@
 
                 <div class="contact-form-wrapper">
                     <h2>Pošaljite nam upit</h2>
-                    <form action="#" method="POST" class="contact-form">
+                    
+                    <div id="form-message" class="form-message hidden"></div>
+
+                    <form id="contact-form" class="contact-form" novalidate>
                         <div class="form-group">
                             <label for="ime">Ime i prezime:</label>
-                            <input type="text" id="ime" name="ime" required>
+                            <input type="text" id="ime" name="ime">
+                            <span class="error-text" id="ime-error"></span>
                         </div>
                         <div class="form-group">
                             <label for="email">Vaš Email:</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email">
+                            <span class="error-text" id="email-error"></span>
                         </div>
                         <div class="form-group">
                             <label for="poruka">Poruka:</label>
-                            <textarea id="poruka" name="poruka" rows="5" required></textarea>
+                            <textarea id="poruka" name="poruka" rows="5"></textarea>
+                            <span class="error-text" id="poruka-error"></span>
                         </div>
                         <button type="submit" class="btn btn-submit">Pošalji poruku</button>
                     </form>

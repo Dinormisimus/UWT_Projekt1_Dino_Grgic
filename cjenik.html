@@ -9,6 +9,7 @@
     <title>Cjenik | Barber Zadar</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="js/cjenikApp.js" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Preskoči na sadržaj</a>
@@ -26,20 +27,22 @@
 
     <main id="main-content" class="pricing-container">
         <h1 class="pricing-title">Cjenik Usluga</h1>
-        <div class="pricing-list">
-            <div class="pricing-item">
-                <span>Klasično šišanje</span>
-                <span class="price">15.00 €</span>
-            </div>
-            <div class="pricing-item">
-                <span>Uređivanje brade</span>
-                <span class="price">10.00 €</span>
-            </div>
-            <div class="pricing-item">
-                <span>Komplet (Šišanje + Brada)</span>
-                <span class="price">22.00 €</span>
-            </div>
+        
+        <div class="search-filter-controls">
+            <input type="text" id="search-input" placeholder="Pretraži usluge...">
+            <select id="filter-select">
+                <option value="all">Sve kategorije</option>
+                <option value="kosa">Kosa</option>
+                <option value="brada">Brada</option>
+                <option value="komplet">Kompleti</option>
+            </select>
         </div>
+
+        <div id="loading-state" class="ui-state">Učitavam usluge...</div>
+        <div id="error-state" class="ui-state hidden">Došlo je do pogreške pri učitavanju podataka.</div>
+        <div id="empty-state" class="ui-state hidden">Nema pronađenih usluga za vašu pretragu.</div>
+
+        <div id="pricing-list" class="pricing-list"></div>
     </main>
 
     <footer>

@@ -1,32 +1,15 @@
-# UWT_Projekt1_Dino_Grgić_UNIZD_SIT_2026
+# Barber Zadar - Interaktivna Web Aplikacija
 
-Moderni, responzivni website za brijačnicu/frizerski salon smješten u Zadru. Projekt je izrađen kao dio sveučilišnog zadatka iz kolegija Uvod u Web Tehnologije (UWT).
+Projekt predstavlja modernu i pristupačnu web stranicu za tradicionalnu brijačnicu u Zadru, nadograđenu čistim JavaScriptom u interaktivnu web aplikaciju.
 
-## 🚀 Demo
-Ovaj projekt prikazuje vještine rada s HTML5, CSS3 (Flexbox, Grid) i osnovnim principima web dizajna bez korištenja teških vanjskih frameworka.
+## Implementirane funkcionalnosti (Zahtjevi projekta)
+- **Dinamički prikaz podataka:** Popis usluga u cjeniku se ne nalazi u HTML-u već se dinamički generira iz podataka.
+- **Async (Fetch API):** Podaci o uslugama se asinkrono učitavaju iz lokalne `usluge.json` datoteke.
+- **Upravljanje stanjem (State):** Aplikacija prati stanje pretrage, odabrane kategorije i popisa favorita.
+- **Persistencija (localStorage):** Favorizirane usluge i zadnja pretraga korisnika ostaju spremljeni i nakon osvježavanja stranice.
+- **UI stanja:** Implementirana su vizualna stanja za učitavanje (*loading*), pogrešku (*error*) i prazan rezultat pretrage (*empty state*).
+- **Forma i Validacija:** Kontakt forma na stranici Lokacija obrađuje se bez osvježavanja stranice (`preventDefault`), ima klijentsku validaciju i ispisuje poruke uspjeha/greške.
+- **Organizacija koda:** Kod je podijeljen u ES6 module (`type="module"`) odvajajući stanje (`state.js`), UI logiku (`ui.js`) i aplikacijsku logiku (`cjenikApp.js`, `formaApp.js`).
 
-## ✨ Ključne značajke
-- **Responzivni dizajn:** Stranica je prilagođena mobilnim uređajima, tabletima i stolnim računalima.
-- **Sticky navigacija:** Navigacija ostaje pri vrhu dok se skrola sadržaj i koristi tamni overlay.
-- **Hamburger izbornik bez JavaScripta:** Mobilni meni je izrađen isključivo pomoću CSS checkbox hacka.
-- **Galerija:** Prikaz radova izrađen s CSS Grid layoutom.
-- **Google Maps integracija:** Ugrađena karta koja prati tamni dizajn.
-- **Kontakt forma:** Jednostavna forma s labelama i pristupačnim unosom.
-- **Favicon:** Dodan favicon u korijenu projekta i spojen relativnom putanjom.
-
-## 🛠️ Korištene tehnologije
-- **HTML5** - Semantička struktura stranice.
-- **CSS3** - Napredno stiliziranje, Flexbox, Grid, CSS varijable i responsive dizajn.
-- **Google Fonts** - Fontovi `Poppins` i `Playfair Display` za premium izgled.
-
-## 📂 Struktura projekta
-```text
-/barber-zadar
-│
-├── index.html       # Početna stranica s Hero sekcijom
-├── cjenik.html      # Pregled usluga i cijena
-├── galerija.html    # Prikaz radova (Grid layout)
-├── lokacija.html    # Google Maps i kontakt forma
-├── style.css        # Svi stilovi, varijable i media upiti
-└── favicon.png      # Ikona stranice
-```
+## Autor
+Dino Grgić - UWT Projekt_1 (2026)
