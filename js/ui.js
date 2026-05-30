@@ -4,10 +4,18 @@ export function renderUsluge(renderContainer, onFavoritToggleCallback) {
     const loadingEl = document.getElementById('loading-state');
     const emptyEl = document.getElementById('empty-state');
     
-    // Filtriranje podataka na temelju stanja (Search i Filter)
+    // Filtriranje podataka na temelju stanja (Search, Filter i Favoriti)
     const filtriraneUsluge = state.usluge.filter(u => {
         const matchesSearch = u.naziv.toLowerCase().includes(state.searchQuery.toLowerCase());
-        const matchesCategory = state.odabranaKategorija === 'all' || u.kategorija === state.odabranaKategorija;
+        
+        // LOGIKA ZA FAVORIJE: Ako je odabrana kategorija 'favoriti', provjeri nalazi li se ID u favoritima
+        let matchesCategory = false;
+        if (state.odabranaKategorija === 'favoriti') {
+            matchesCategory = state.favoriti.includes(u.id);
+        } else {
+            matchesCategory = state.odabranaKategorija === 'all' || u.kategorija === state.odabranaKategorija;
+        }
+        
         return matchesSearch && matchesCategory;
     });
 
@@ -15,8 +23,13 @@ export function renderUsluge(renderContainer, onFavoritToggleCallback) {
     loadingEl.classList.add('hidden');
     renderContainer.innerHTML = '';
 
-    // Provjera "Empty" stanja
+    // Provjera "Empty" stanja (ispisuje poruku ako nema rezultata ili ako nema favorita)
     if (filtriraneUsluge.length === 0) {
+        if (state.odabranaKategorija === 'favoriti') {
+            emptyEl.textContent = "Nemate spremljenih favorita. Kliknite zvjezdicu pokraj usluge!";
+        } else {
+            emptyEl.textContent = "Nema pronađenih usluga za vašu pretragu.";
+        }
         emptyEl.classList.remove('hidden');
         return;
     } else {
@@ -39,11 +52,11 @@ export function renderUsluge(renderContainer, onFavoritToggleCallback) {
             <span class="price">${u.cijena.toFixed(2)} €</span>
         `;
         
-        // Event listener za interakciju korisnika (klik na favorit)
+        // Event listener za klik na favorit
         item.querySelector('.fav-btn').addEventListener('click', (e) => {
             const id = parseInt(e.target.getAttribute('data-id'));
             toggleFavorit(id);
-            onFavoritToggleCallback(); // Ponovno iscrtaj UI
+            onFavoritToggleCallback(); // Ponovno iscrtaj UI (maknut će stavku s ekrana ako smo u "Favoriti" filteru)
         });
 
         renderContainer.appendChild(item);
