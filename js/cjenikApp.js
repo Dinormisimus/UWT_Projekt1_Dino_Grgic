@@ -29,10 +29,21 @@ function osvjeziUI() {
     renderKosarica(osvjeziUI);
 }
 
+// DEBOUNCE - odgoda pretragu za 500ms nakon sto korisnik prestane pisati
+let debounceTimeout;
+
 if (searchInput) {
     searchInput.addEventListener('input', (e) => {
+        // Očisti prethodni timeout
+        clearTimeout(debounceTimeout);
+        
+        // Spremi vrijednost u state
         spremiPretragu(e.target.value);
-        osvjeziUI();
+        
+        // Postavi novi timeout - osvježi UI nakon 500ms inaktivnosti
+        debounceTimeout = setTimeout(() => {
+            osvjeziUI();
+        }, 300);
     });
 }
 
